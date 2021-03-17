@@ -4,149 +4,181 @@
   <meta charset="utf-8">
   <title>My Shopping Cart</title>
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 <body>
   <div>
-  <nav class="navbar navbar-default">
+  <nav class="navbar fixed-top navbar-light bg-secondary bg-gradient">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">
+        <a class="text-white navbar-brand" href="#">
           My Shopping Cart
         </a>
       </div>
     </div>
   </nav>
-  <div class="container">
+  <div class="container mt-5 pt-3">
     <div class="row">
-      <div class="col col-sm-9">
-        <h1>Products</h1>
-        <div class="row">
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
+      <div class="col-9">
+        <h2>Products</h2>
+        <div class="row mt-3">
+          <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+            <div class="card mb-2 mr-1 w-100" >
+              <img class="img-fluid" src="images/apple.jpg">
+              <div class="card-body d-flex flex-column justify-content-end">
+                <h5 class="card-title">Apple</h5>
+                <p class="card-text">$10.99</p>
+                <button type="button" class="btn btn-outline-success w-75">Add to Card</button>
+                <!-- <a href="#" class="btn btn-primary w-75">Add to Card</a> -->
+              </div>
             </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
           </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
+          <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+            <div class="card mb-2 mr-1 w-100">
+              <img class="img-fluid" src="images/apricot.jpg">
+              <div class="card-body d-flex flex-column justify-content-end">
+                <h5 class="card-title">Apricot</h5>
+                <p class="card-text">$10.99</p>
+                <button type="button" class="btn btn-outline-warning w-75">Add to Card</button>
+              </div>
             </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
           </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
+          <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+            <div class="card mb-2 mr-1 w-100">
+              <img class="img-fluid" src="images/banana.jpg">
+              <div class="card-body d-flex flex-column justify-content-end">
+                <h5 class="card-title">Banana</h5>
+                <p class="card-text">$10.99</p>
+                <button type="button" class="btn btn-outline-danger w-75">Add to Card</button>
+              </div>
             </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
           </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
+          <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+            <div class="card mb-2 mr-1 w-100">
+              <img class="img-fluid" src="images/cherry.jpg">
+              <div class="card-body d-flex flex-column justify-content-end">
+                <h5 class="card-title">Cherry</h5>
+                <p class="card-text">$10.99</p>
+                <button type="button" class="btn btn-outline-info w-75">Add to Card</button>
+              </div>
             </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
           </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
+          <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+            <div class="card mb-2 mr-1 w-100">
+              <img class="img-fluid" src="images/coconut.jpg">
+              <div class="card-body d-flex flex-column justify-content-end">
+                <h5 class="card-title">Coconut</h5>
+                <p class="card-text">$10.99</p>
+                <button type="button" class="btn btn-outline-success w-75">Add to Card</button>
+              </div>
             </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
           </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
+          <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+            <div class="card mb-2 mr-1 w-100">
+              <img class="img-fluid" src="images/garnet.jpg">
+              <div class="card-body d-flex flex-column justify-content-end">
+                <h5 class="card-title">Garnet</h5>
+                <p class="card-text">$10.99</p>
+                <button type="button" class="btn btn-outline-warning w-75">Add to Card</button>
+              </div>
             </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
           </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
+          <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+            <div class="card mb-2 mr-1 w-100">
+              <img class="img-fluid" src="images/grape.jpg">
+              <div class="card-body d-flex flex-column justify-content-end">
+                <h5 class="card-title">Grape</h5>
+                <p class="card-text">$10.99</p>
+                <button type="button" class="btn btn-outline-danger w-75">Add to Card</button>
+              </div>
             </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
           </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
+          <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+            <div class="card mb-2 mr-1 w-100">
+              <img class="img-fluid" src="images/kiwi.jpg">
+              <div class="card-body d-flex flex-column justify-content-end">
+                <h5 class="card-title">Kiwi</h5>
+                <p class="card-text">$10.99</p>
+                <button type="button" class="btn btn-outline-info w-75">Add to Card</button>
+              </div>
             </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
           </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
+          <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+            <div class="card mb-2 mr-1 w-100">
+              <img class="img-fluid" src="images/melon.jpg">
+              <div class="card-body d-flex flex-column justify-content-end">
+                <h5 class="card-title">Melon</h5>
+                <p class="card-text">$10.99</p>
+                <button type="button" class="btn btn-outline-success w-75">Add to Card</button>
+              </div>
             </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
           </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
+          <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+            <div class="card mb-2 mr-1 w-100">
+              <img class="img-fluid" src="images/orange.jpg">
+              <div class="card-body d-flex flex-column justify-content-end">
+                <h5 class="card-title">Orange</h5>
+                <p class="card-text">$10.99</p>
+                <button type="button" class="btn btn-outline-warning w-75">Add to Card</button>
+              </div>
             </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
           </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
+          <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+            <div class="card mb-2 mr-1 w-100">
+              <img class="img-fluid" src="images/peach.jpg">
+              <div class="card-body d-flex flex-column justify-content-end">
+                <h5 class="card-title">Peach</h5>
+                <p class="card-text">$10.99</p>
+                <button type="button" class="btn btn-outline-danger w-75">Add to Card</button>
+              </div>
             </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
           </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
+          <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+            <div class="card mb-2 mr-1 w-100">
+              <img class="img-fluid" src="images/pear.jpg">
+              <div class="card-body d-flex flex-column justify-content-end">
+                <h5 class="card-title">Pear</h5>
+                <p class="card-text">$10.99</p>
+                <button type="button" class="btn btn-outline-info w-75">Add to Card</button>
+              </div>
             </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
           </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
+          <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+            <div class="card mb-2 mr-1 w-100">
+              <img class="img-fluid" src="images/pineapple.jpeg">
+              <div class="card-body d-flex flex-column justify-content-end">
+                <h5 class="card-title">Pineapple</h5>
+                <p class="card-text">$10.99</p>
+                <button type="button" class="btn btn-outline-success w-75">Add to Card</button>
+              </div>
             </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
           </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
+          <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+            <div class="card mb-2 mr-1 w-100">
+              <img class="img-fluid" src="images/plum.jpg">
+              <div class="card-body d-flex flex-column justify-content-end">
+                <h5 class="card-title">Plum</h5>
+                <p class="card-text">$10.99</p>
+                <button type="button" class="btn btn-outline-warning w-75">Add to Card</button>
+              </div>
             </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
           </div>
-          <div class="col col-xs-12 col-md-6 col-lg-4">
-            <div>
-              <img src="http://lorempixel.com/250/250/">
+          <div class="col-sm-12 col-md-6 col-lg-4 d-flex align-items-stretch">
+            <div class="card mb-2 mr-1 w-100">
+              <img class="img-fluid" src="images/watermelon.jpg">
+              <div class="card-body d-flex flex-column justify-content-end">
+                <h5 class="card-title">Watermelon</h5>
+                <p class="card-text">$10.99</p>
+                <button type="button" class="btn btn-outline-danger w-75">Add to Card</button>
+              </div>
             </div>
-            <h2>Product Name</h2>
-            <p>Product Name</p>
-            <p>$10.99</p>
           </div>
 
         </div>
       </div>
-      <div class="col col-sm-3">
-        <h1>Shopping Cart</h1>
+      <div class="col-3 text-md-center text-sm-center">
+        <h2>Shopping Cart</h2>
         <div class="cart">
         </div>
       </div>
@@ -154,11 +186,16 @@
   </div>
 </div>
 
-  <script
+  <!-- <script
   src="http://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script> -->
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
   crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
   <script src="cart.js"></script>
 </body>
 </html>
