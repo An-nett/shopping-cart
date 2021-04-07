@@ -1,0 +1,14 @@
+.total-form {
+    z-index:100;
+}
+
+@media screen and (min-width: 992px) {
+    .card-item {width: 50%}
+}
+
+.btn.plus:focus {
+    box-shadow: none;
+}
+.btn.minus:focus {
+    box-shadow: none;
+}

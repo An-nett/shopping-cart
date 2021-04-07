@@ -55,18 +55,18 @@ $addBtn.click(function(e) {
     
 
     $('<img>').attr('src', items[btnIndex].source)
-              .addClass('img-fluid h-50')
+              .addClass('img-fluid h-50 w-50')
               .appendTo($chosenItem);
 
     
     //текстовая часть
-    let $textInfo = $('<div></div>').addClass('card-body d-flex flex-column')
+    let $textInfo = $('<div></div>').addClass('card-body card-item d-flex flex-column')
                                     .appendTo($chosenItem);
 
     //заголовок
     $('<h4></h4>')
         .text(items[btnIndex].name)
-        .addClass('card-title')
+        .addClass('card-title fs-5 text-wrap')
         .appendTo($textInfo);
 
     //цена
@@ -77,12 +77,12 @@ $addBtn.click(function(e) {
 
     //плюс и минус
     $('<p class = "amount-change mb-0"></p>')
-        .append('<a href="#" class = "plus link-success fs-1 text-decoration-none"> + </a>')
-        .append('<a href="#" class = "minus link-danger fs-1 text-decoration-none"> - </a>')
+        .append('<button type="button" class = "btn d-inline-block ps-0 pe-0 plus link-success fs-1 text-decoration-none"> + </button>')
+        .append('<button type="button" class = "btn d-inline-block ps-0 pe-0 minus link-danger fs-1 text-decoration-none"> - </button>')
         .appendTo($textInfo);
 
     //кнопка удалить
-    $('<button[type="button"] class="btn delete btn-outline-primary">Delete</button>')
+    $('<button type="button" class="btn delete btn-outline-primary">Delete</button>')
         .appendTo($textInfo);
 
     //куда добавить (перед общей суммой или впервые)
@@ -94,10 +94,9 @@ $addBtn.click(function(e) {
         $chosenItem.appendTo( '.cart' )
     }
    
-    $chosenItem.addClass('card mb-1 d-flex flex-row justify-content-between border w-50 align-items-center'); 
+    $chosenItem.addClass('card mb-1 d-flex flex-column flex-lg-row justify-content-between border align-items-center'); 
     
     };
-
 
     added.add(btnIndex);
 
@@ -113,7 +112,7 @@ $addBtn.click(function(e) {
         $('<p class = "fs-5 mb-0"> Taxes: </p>')
             .appendTo($totSum).append($('<span class = "taxes fst-italic"></span>'));
 
-        $('<button[type="button"] class = "btn btn-light text-primary mt-1 mb-1 buy"> Buy Items </button>').appendTo($totSum);
+        $('<button type="button" class = "btn btn-light text-primary mt-1 mb-1 buy"> Buy Items </button>').appendTo($totSum);
     }
 
     calcSum();
@@ -132,9 +131,8 @@ $('.cart').click(function(e) {
 //функция для удаления карточки из корзины
 function deleteCard(target) {
 
-    $(target).closest('div.card').remove();
+    let name = $(target).closest('.card').find('h4').text();
 
-    let name = $(target).siblings('h4').text();
     let delIndex;
 
     for (let i = 0; i < items.length; i++) {
@@ -145,6 +143,7 @@ function deleteCard(target) {
 
     }
 
+$(target).closest('div.card').remove();
 //удаляет карточку с общей суммой, если корзина пустая
     if ($('.delete').length < 1) {
         $('.total').remove();
@@ -155,19 +154,19 @@ function deleteCard(target) {
 
 }
 
-
+let totalSum = 0;
 //расчет общей суммы покупки
 function calcSum() {
     let $prices = $('.items-prices');
-    let totalSum = 0;
+    let curSum = 0;
     for (let i = 0; i < $prices.length; i++) {
         let calcPrice = $($prices[i]).text().split(' x ');
         let result = calcPrice[0] * calcPrice[1];
-        totalSum += result;
+        curSum += result;
     }
 
-    let tax = + (totalSum * 0.1).toFixed(2);
-    totalSum = + totalSum.toFixed(2);
+    let tax = + (curSum * 0.1).toFixed(2);
+    totalSum = + curSum.toFixed(2);
 
     $('.result').text(totalSum + '$');
     $('.taxes').text(tax + '$');
@@ -196,4 +195,111 @@ $('.cart').click(function(e) {
     }
     calcSum();
 })
+
+let $cart;
+
+//появление поля "заполнить информацию"
+$('.cart').click(function(e) {
+
+    if ($(e.target).hasClass('buy')) {
+        $('.total-form').removeClass('d-none');
+
+        $addBtn.attr('disabled', '');
+
+        $cart = $(e.target).parent().parent('.cart');
+        
+        $('.cart').find('.delete').attr('disabled', '');
+        $('.cart').find('.plus').addClass('disabled');
+        $('.cart').find('.minus').addClass('disabled');
+    
+    }
+
+    let deliv = + $('.form-check input:radio:checked').val()
+        let final = totalSum + deliv;
+        $('.result-del').text(final + '$');
+
+})
+
+//закрыть поле "заполнить информацию"
+$('.btn-close').click(function() {
+    $('.total-form').addClass('d-none');
+
+    $addBtn.removeAttr('disabled')
+    $('.cart').find('.delete').removeAttr('disabled', '');
+    $('.cart').find('.plus').removeClass('disabled');
+    $('.cart').find('.minus').removeClass('disabled');
+
+    if ($('#floatingInputName').hasClass('is-invalid')) {
+        $('#floatingInputName').removeClass('is-invalid');
+    }
+    if ($('#floatingInputAddress').hasClass('is-invalid')) {
+        $('#floatingInputAddress').removeClass('is-invalid');
+    }
+})
+
+$('.checkout').click(function() {
+
+    let $inputName = $('#floatingInputName');
+    let inputNameVal = $inputName.val();
+    let $inputAddress = $('#floatingInputAddress');
+    let inputAddressVal = $inputAddress.val()
+
+
+    //сообщение о неверном или верном вводе
+    if (typeof inputNameVal !== 'string' || inputNameVal == '') {
+        $inputName.addClass('is-invalid');
+    }
+    else if ($inputName.hasClass('is-invalid')) {
+        $inputName.removeClass('is-invalid');
+        $inputName.addClass('is-valid');
+    }
+    else $inputName.addClass('is-valid');
+    
+
+    if (typeof inputAddressVal !== 'string' || inputAddressVal == '') {
+        $inputAddress.addClass('is-invalid');
+    }
+    else if ($inputAddress.hasClass('is-invalid')) {
+        $inputAddress.removeClass('is-invalid');
+        $inputAddress.addClass('is-valid');
+    }
+    else $inputAddress.addClass('is-valid');
+    
+    //если поля заполнены корректно
+    if ($inputName.hasClass('is-valid') && $inputAddress.hasClass('is-valid')) {
+        $('.total-form').addClass('d-none');
+        $addBtn.removeAttr('disabled')
+        
+        let $delBtn = $('.cart').find('.delete');
+    
+        for (let i = $delBtn.length; i >= 0; i--) {
+            deleteCard($delBtn[i])
+        }
+    
+        $('.cart').find('.total').remove();
+        $('.success').removeClass('d-none');
+
+        //сообщение об успехе
+        setTimeout(function() {
+           $('.success').addClass('d-none')
+        }, 1000)
+
+        //обнуление введенных данных
+        $inputName.removeClass('is-valid');
+        $inputAddress.removeClass('is-valid');
+        $inputName.val('');
+        $inputAddress.val('');
+    } 
+})
+
+//сумма вместе с доставкой при выборе опций
+$('.form-check').click(function(e) {
+    if ($(e.target).hasClass('form-check-input')) {
+        let deliv = + $('.form-check input:radio:checked').val()
+        let final = totalSum + deliv;
+        $('.result-del').text(final + '$');
+    }
+})
+
+
 
